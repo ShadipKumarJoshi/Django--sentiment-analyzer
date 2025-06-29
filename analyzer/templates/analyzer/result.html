@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Sentiment Analysis Result</h2>
+<p><strong>Text:</strong> {{ text }}</p>
+<p><strong>Sentiment:</strong> <span class="sentiment {{ sentiment|lower }}">{{ sentiment }}</span></p>
+<h3>Sentiment Scores:</h3>
+<ul>
+    <li>Positive: {{ scores.pos|floatformat:3 }}</li>
+    <li>Negative: {{ scores.neg|floatformat:3 }}</li>
+    <li>Neutral: {{ scores.neu|floatformat:3 }}</li>
+    <li>Compound: {{ scores.compound|floatformat:3 }}</li>
+</ul>
+<a href="{% url 'analyze_sentiment' %}" class="button">Analyze Another Text</a>
+{% endblock %}
