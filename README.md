@@ -16,4 +16,6 @@ pip install -r requirements.txt
 
 # Run
 
+py manage.py runserver
+
 
